@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: gestao-escolar-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mapeia o diretório atual para /app no contêiner
+      # Isso permite o hot-reloading e a persistência do banco de dados SQLite
+      - .:/app
